@@ -1,0 +1,29 @@
+:root {
+  --main-card-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --main-card-width: 60%;
+  }
+}
+
+.mainCard {
+  width: var(--main-card-width);
+  height: 70vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  /* background: green; */
+}
+
+.mainCardContainer {
+  margin: 0 auto;
+  width: var(--container-width);
+  /* background: purple; */
+}
+
+.logo {
+  width: 100%;
+  height: 20vh;
+  /* background: blue; */
+}

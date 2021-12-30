@@ -1,0 +1,47 @@
+.balance {
+  /* background: green; */
+  width: 100%;
+  height: 10vh;
+  /* margin-left: 20%; */
+  margin-top: 12vh;
+  position: relative;
+}
+
+.balanceNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  color: var(--black);
+  font-family: 'Montserrat';
+  font-size: 3em;
+}
+
+.balanceCurrency {
+  width: 5vh;
+  height: 5vh;
+  position: absolute;
+  bottom: 0%;
+  right: -6vh;
+}
+
+.balanceCurrencyImg {
+  width: 5vh;
+  height: 5vh;
+  background: gold;
+  border-radius: 100%;
+}
+
+.transactions {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.separator {
+  height: 0.05vh;
+  background: var(--lightgray);
+  width: 95%;
+  margin-left: 2.5%;
+}

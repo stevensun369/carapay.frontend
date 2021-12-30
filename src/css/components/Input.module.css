@@ -1,0 +1,26 @@
+.input {
+  background: var(--lightgray);
+  color: var(--black);
+  font-family: 'Montserrat';
+
+  border: none;
+  outline: none;
+
+  height: 6.5vh;
+  width: 95%;
+
+  border-radius: 2.5vh;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-left: 2vh;
+
+  margin-left: 2.5%;
+  margin-bottom: 1vh;
+}
+
+.input::placeholder {
+  color: var(--black);
+  font-family: 'Montserrat';
+}

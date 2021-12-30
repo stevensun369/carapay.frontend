@@ -1,0 +1,93 @@
+.transaction {
+  width: 100%;
+  min-height: 7vh;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+/* transactionValue */
+.transactionValue {
+  float: right;
+  width: 35%;
+  height: 7vh;
+  font-size: 1.25em;
+  font-family: 'Montserrat';
+  position: relative;
+  /* background: green; */
+}
+
+.transactionValueSpanSend {
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: right;
+  /* background: green; */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-right: 3vh;
+  color: red;
+}
+
+.transactionValueSpanReceive {
+  font-weight: 600;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: right;
+  /* background: green; */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-right: 3vh;
+  color: green;
+}
+
+/* transactionData */
+.transactionData {
+  /* background: blue; */
+  width: 65%;
+  min-height: 7vh;
+  float: left;
+}
+
+.transactionDataMessage {
+  width: 90%;
+  margin-left: 5%;
+  font-family: 'Montserrat';
+  color: var(--black);
+}
+
+.transactionDataPerson {
+  color: var(--darkgray);
+  margin-left: 5%;
+  margin-top: 1vh;
+  width: 90%;
+  font-family: 'Montserrat';
+  font-size: 0.95em;
+}
+
+.transactionDataDate {
+  color: lightslategray;
+  margin-left: 5%;
+  margin-top: 1vh;
+  width: 90%;
+  font-family: 'Montserrat';
+  font-size: 0.9em;
+}
+
+.separator {
+  height: 0.05vh;
+  background: var(--lightgray);
+  width: 95%;
+  margin-left: 2.5%;
+}

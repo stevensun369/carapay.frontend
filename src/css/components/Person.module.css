@@ -1,0 +1,84 @@
+.person {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+.personInfo {
+  width: 60%;
+  display: inline-block;
+  box-sizing: border-box;
+  /* background: red; */
+}
+
+.personSendButton {
+  width: 30%;
+  height: 7vh;
+  background: var(--black);
+  float: right;
+  position: relative;
+  right: 10%;
+  border-radius: 3vh;
+
+  top: 50%;
+  -ms-transform: translateY(25%);
+  transform: translateY(25%);
+}
+
+.personSendButtonSpan {
+  font-family: 'Montserrat';
+  color: white;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.personData {
+  width: 100%;
+  height: 4vh;
+  float: left;
+  position: relative;
+}
+
+.personDataSpan {
+  font-family: 'Montserrat';
+  color: var(--black);
+  /* font-size: 1.1em; */
+
+  position: absolute;
+  top: 50%;
+  left: 3vh;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.personUserID {
+  width: 100%;
+  height: 2vh;
+  float: left;
+  position: relative;
+}
+
+.personUserIDSpan {
+  font-family: 'Montserrat';
+  color: var(--lightgray);
+  font-size: 0.9em;
+
+  position: absolute;
+  top: 50%;
+  left: 3vh;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.separator {
+  height: 0.05vh;
+  background: var(--lightgray);
+  width: 95%;
+  margin-left: 2.5%;
+}

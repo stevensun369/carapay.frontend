@@ -1,0 +1,16 @@
+.submitButton {
+  width: 80%;
+  height: 7vh;
+  margin-left: 10%;
+  margin-top: 5vh;
+
+  border: none;
+  outline: none;
+
+  background: var(--black);
+  border-radius: 2.5vh;
+
+  color: var(--white);
+
+  font-family: 'Montserrat';
+}

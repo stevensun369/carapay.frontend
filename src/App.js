@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
 
-function App() {
+// redux
+import { useDispatch, useSelector } from 'react-redux'
+
+// import actions
+import { getBalance, getTransactions } from './actions/actions'
+
+// router
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomeScreen from './screens/HomeScreen'
+import PeopleScreen from './screens/PeopleScreen'
+import RegisterScreen from './screens/RegisterScreen'
+import LoginScreen from './screens/LoginScreen'
+import ProfileScreen from './screens/ProfileScreen'
+
+const App = () => {
+  const dispatch = useDispatch('')
+
+  const userLogin = useSelector((state) => state.userLogin)
+
+  useEffect(() => {
+    if (userLogin.userInfo) {
+      dispatch(getBalance())
+      dispatch(getTransactions())
+    }
+  }, [dispatch, userLogin.userInfo])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/home' element={<HomeScreen />} />
+        <Route path='/people' element={<PeopleScreen />} />
+
+        <Route path='/register' element={<RegisterScreen />} />
+        <Route path='/login' element={<LoginScreen />} />
+
+        <Route path='/profile' element={<ProfileScreen />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
