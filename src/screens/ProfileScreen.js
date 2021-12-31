@@ -20,7 +20,7 @@ const ProfileScreen = () => {
   useEffect(() => {
     protect(userLogin, navigate)
     dispatch(changePasswordDelete())
-  }, [navigate, userLogin])
+  }, [navigate, dispatch, userLogin])
 
   return (
     <>
