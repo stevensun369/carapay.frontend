@@ -3,6 +3,7 @@
   height: 8vh;
   position: fixed;
   top: 0;
+  background: var(--white);
 }
 
 .headerBackButton {

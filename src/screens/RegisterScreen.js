@@ -9,6 +9,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Input from '../components/Input'
 import SubmitButton from '../components/SubmitButton'
+import HeaderBack from '../components/HeaderBack'
 
 // actions
 import { register } from '../actions/actions'
@@ -19,7 +20,7 @@ import { useNavigate } from 'react-router-dom'
 // styles
 import styles from '../css/ConnectScreens.module.css'
 
-const RegisterScreen = ({ history }) => {
+const RegisterScreen = () => {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -51,6 +52,8 @@ const RegisterScreen = ({ history }) => {
 
   return (
     <>
+      <HeaderBack backTo='/welcome'></HeaderBack>
+
       <div className={styles.mainCard}>
         <div className={styles.mainCardContainer}>
           <div className={styles.logo}></div>

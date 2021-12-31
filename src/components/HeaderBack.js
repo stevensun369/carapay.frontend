@@ -4,10 +4,10 @@ import styles from '../css/components/HeaderBack.module.css'
 
 import { Link } from 'react-router-dom'
 
-const HeaderBack = ({ children }) => {
+const HeaderBack = ({ children, backTo }) => {
   return (
     <div className={styles.header}>
-      <Link to='/home'>
+      <Link to={backTo}>
         <div className={styles.headerBackButton}>
           <img
             src='/img/backbutton.png'

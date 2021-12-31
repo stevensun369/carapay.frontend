@@ -1,5 +1,5 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import HeaderBack from '../components/HeaderBack'
 
@@ -7,11 +7,34 @@ import styles from '../css/ProfileScreen.module.css'
 
 import Button from '../components/Button'
 
+import { Link, useNavigate } from 'react-router-dom'
+import protect from '../utils/protect'
+import { changePasswordDelete } from '../actions/actions'
+
 const ProfileScreen = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const userLogin = useSelector((state) => state.userLogin)
+
+  useEffect(() => {
+    protect(userLogin, navigate)
+    dispatch(changePasswordDelete())
+  }, [navigate, userLogin])
+
   return (
     <>
-      <HeaderBack>Profil</HeaderBack>
+      <HeaderBack backTo='/home'>Profil</HeaderBack>
+
+      <Link to='/logout'>
+        <div className={styles.logoutButton}>
+          <img
+            src='/img/logout.png'
+            alt='logout'
+            className={styles.logoutButtonImg}
+          ></img>
+        </div>
+      </Link>
 
       {/* userID */}
       <div className={styles.userID}>
@@ -41,7 +64,9 @@ const ProfileScreen = () => {
       </div>
 
       {/* change password button */}
-      <Button>Schimba parola</Button>
+      <Link to='/profile/password'>
+        <Button>Schimba parola</Button>
+      </Link>
     </>
   )
 }

@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getPeople, addToPeopleDelete } from '../actions/actions'
 import Footer from '../components/Footer'
 import HeaderHome from '../components/HeaderHome'
 import Person from '../components/Person'
+import { Link, useNavigate } from 'react-router-dom'
 
 import styles from '../css/PeopleScreen.module.css'
+import protect from '../utils/protect'
 
 const PeopleScreen = () => {
+  const dispatch = useDispatch('')
+  const navigate = useNavigate()
+
+  const people = useSelector((state) => state.people)
+  // const { loading, error } = people
+
+  const userLogin = useSelector((state) => state.userLogin)
+
+  useEffect(() => {
+    protect(userLogin, navigate)
+  }, [navigate, userLogin])
+
+  useEffect(() => {
+    dispatch(addToPeopleDelete())
+    dispatch(getPeople())
+  }, [dispatch])
+
   return (
     <>
       <HeaderHome />
@@ -15,25 +36,29 @@ const PeopleScreen = () => {
       <div className={styles.title}>
         <span className={styles.titleSpan}>Persoane</span>
       </div>
-      <div className={styles.separator}></div>
-      <Person
-        username='stevensun'
-        email='stevensun@gmail.com'
-        userID='123456'
-      />
+      {people.people ? (
+        <>
+          <div className={styles.separator}></div>
+          {people.people.map((p) => (
+            <Person
+              username={p.username}
+              email={p.email}
+              userID={p.userID}
+              key={p.userID}
+            />
+          ))}
+        </>
+      ) : (
+        <div className='nothingToShow'>Nu exista persoane inca</div>
+      )}
 
-      <Person
-        username='stevensun'
-        email='stevensun@gmail.com'
-        userID='123456'
-      />
-
-      <Person
-        username='stevensun'
-        email='stevensun@gmail.com'
-        userID='123456'
-      />
-
+      <Link to='/people/add'>
+        <div className={styles.addToPeopleButton}>
+          <span className={styles.addToPeopleButtonSpan}>
+            Adauga persoana
+          </span>
+        </div>
+      </Link>
       <Footer screen='people' />
     </>
   )

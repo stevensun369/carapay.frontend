@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom'
 
 // styles
 import styles from '../css/ConnectScreens.module.css'
+import HeaderBack from '../components/HeaderBack'
 
 const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState('')
@@ -42,6 +43,7 @@ const LoginScreen = ({ history }) => {
 
   return (
     <>
+      <HeaderBack backTo='/welcome'></HeaderBack>
       <div className={styles.mainCard}>
         <div className={styles.mainCardContainer}>
           <div className={styles.logo}></div>

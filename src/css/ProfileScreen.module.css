@@ -61,3 +61,22 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.logoutButton {
+  height: 8vh;
+  width: 8vh;
+  position: fixed;
+  top: 0%;
+  right: 0%;
+}
+
+.logoutButtonImg {
+  height: 3.5vh;
+  width: 3.5vh;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
